@@ -1,0 +1,115 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.image-placeholder {
+    background: #fff;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+#headerpic {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn1{
+    background-color: #fbbf24;
+    color: #000;
+    font-weight: normal;
+    padding: 12px 24px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.btn1:hover {
+    background-color: #f59e0b; /* hover:bg-yellow-500 */
+}
+
+#cimesebavimobtn{
+    margin-left: 30px;
+}
+
+.image-placeholder::before,
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#ribbon {
+    position: sticky;
+    display: flex;
+    align-items: left;
+}
+
+.nav-link {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #494949;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #177eb5;
+}
+
+.step-box {
+    border: 3px solid #177eb5;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-line {
+    width: 3px;
+    height: 60px;
+    background: #177eb5;
+    margin: 0 auto;
+}
+
+.bullet-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.bullet-dash {
+    width: 22px;
+    height: 2px;
+    background: #177eb5;
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    text-align: left;
+    z-index: 10;
+}
+
+#formchurch {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
