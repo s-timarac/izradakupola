@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ss2.css">
     <link rel="icon" type="image" href="favicon.png">
-   
     
   </head>
 
@@ -31,8 +30,8 @@
               <p class="text-base text-brand-gray font-light">od 10:00 do 19:00</p>
             </div>
             <div>
-              <p class="text-sm text-brand-dark">+7(910)944-93-01</p>
-              <p class="text-sm text-brand-dark">+7(905)625-35-32</p>
+              <p class="text-sm text-brand-dark">+(387) 65 740 527</p>
+              <!-- <p class="text-sm text-brand-dark">(+387) </p> -->
             </div>
             <button class="bg-brand-yellow text-black text-sm font-normal px-4 py-2 hover:bg-yellow-500 transition-colors whitespace-nowrap cursor-pointer">
               Pozovi
@@ -42,19 +41,39 @@
       </div>
       <!-- Navigation Bar -->
       <div class="bg-brand-mediumbg" id="ribbon">
-        <div class="max-w-screen-xl mx-auto px-4">
-          <nav class="flex items-center gap-4 py-3 overflow-x-auto">
+        <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between">
+          <button class="mobile-menu-button md:hidden" id="mobileMenuButton" aria-label="Otvorite meni">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          <nav class="nav-links hidden md:flex items-center gap-4 py-3 overflow-x-auto">
             <a href="#about" class="nav-link">O NAMA</a>
             <a href="#services" class="nav-link">ČIME SE BAVIMO</a>
             <a href="#works" class="nav-link">RADOVI I USLUGE</a>
             <a href="#portfolio" class="nav-link">GALERIJA</a>
             <a href="#how" class="nav-link">CIJENA I ROK</a>
-            
             <a href="#order" class="nav-link">NARUČITE</a>
             <a href="#contacts" class="nav-link">KONTAKT</a>
           </nav>
         </div>
       </div>
+      <div class="mobile-drawer-backdrop hidden" id="mobileDrawerBackdrop"></div>
+      <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="mobile-drawer-header">
+          <span class="mobile-drawer-title">Meni</span>
+          <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Zatvori meni">&times;</button>
+        </div>
+        <nav class="mobile-drawer-nav">
+          <a href="#about" class="nav-link">O NAMA</a>
+          <a href="#services" class="nav-link">ČIME SE BAVIMO</a>
+          <a href="#works" class="nav-link">RADOVI I USLUGE</a>
+          <a href="#portfolio" class="nav-link">GALERIJA</a>
+          <a href="#how" class="nav-link">CIJENA I ROK</a>
+          <a href="#order" class="nav-link">NARUČITE</a>
+          <a href="#contacts" class="nav-link">KONTAKT</a>
+        </nav>
+      </aside>
     </header>
 
     <!-- Hero Section -->
@@ -118,57 +137,104 @@
     <section id="services" class="bg-brand-lightbg py-12">
       <div class="max-w-screen-xl mx-auto px-4">
         <div class="bg-white rounded-none">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
             <!-- Left: Image -->
-            <div class="image-placeholder" style="min-height:480px;">
+            <div class="image-placeholder min-h-[520px]">
               <img src="whatwedo.jpg" alt="" srcset="">
             </div>
             <!-- Right: Content -->
-            <div class="p-8">
-              <h2 class="text-xl font-bold text-brand-dark mb-6">Čime se bavimo</h2>
-              <ul class="space-y-3">
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Rekonstrukcija objekata nacionalnog, kulturnog, istorijskog nasljeđa
-                  </p>
-                </li>
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Restauracija spomenika arhitekture i istorije
-                  </p>
-                </li>
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Izgradnja i projektovanje brzoizgradivih hramova
-                  </p>
-                </li>
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Projektovanje kupola i složenih metalnih konstrukcija
-                  </p>
-                </li>
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Izrada i montaža složenih metalnih konstrukcija, svodova hramova, krovnih konstrukcija zgrada i objekata
-                  </p>
-                </li>
-                <li class="bullet-line">
-                  <div class="bullet-dash"></div>
-                  <p class="text-lg font-light text-brand-dark">
-                    Nudimo izradu dekorativnih i umjetničkih radova
-                  </p>
-                </li>
-              </ul>
+            <div class="p-8 flex flex-col justify-between">
+              <div>
+                <h2 class="text-xl font-bold text-brand-dark mb-6">Čime se bavimo</h2>
+                <ul class="space-y-3">
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Rekonstrukcija objekata nacionalnog, kulturnog, istorijskog nasljeđa
+                    </p>
+                  </li>
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Restauracija spomenika arhitekture i istorije
+                    </p>
+                  </li>
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Izgradnja i projektovanje brzoizgradivih hramova
+                    </p>
+                  </li>
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Projektovanje kupola i složenih metalnih konstrukcija
+                    </p>
+                  </li>
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Izrada i montaža složenih metalnih konstrukcija, svodova hramova, krovnih konstrukcija zgrada i objekata
+                    </p>
+                  </li>
+                  <li class="bullet-line">
+                    <div class="bullet-dash"></div>
+                    <p class="text-lg font-light text-brand-dark">
+                      Nudimo izradu dekorativnih i umjetničkih radova
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-6">
+                <a class="btn1" href="#order">
+                  Ostavite zahtjev
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+            <div>
               <br>
               <br>
-              <button class="mt-6 bg-brand-yellow text-black text-base font-medium px-5 py-2 hover:bg-yellow-500 transition-colors cursor-pointer" id="cimesebavimobtn">
-                Ostavite zahtjev
-              </button>
+              <br>
+              <div class="bullet-line">
+                
+                <div class="bullet-dash"></div>
+                <p class="text-lg text-brand-dark leading-relaxed text-left font-light">
+                  Na osnovu praktičnog iskustva, rukovođenja i organizacije radova, implementirane su napredne tehnologije radi izgradnje Sabornog hrama Hrista Spasitelja u Moskvi, kao i Srpsko-ruske crkve u Banjoj Luci
+                </p>
+              </div>
+              <div class="bullet-line">
+                <div class="bullet-dash"></div>
+                <p class="text-lg text-brand-dark leading-relaxed text-left font-light">
+                  Nudimo usluge primjene takvih tehnologija na gradilištima crkava kao i njihovoj rekonstrukciji
+                </p>
+              </div>
+              <div class="bullet-line">
+                <div class="bullet-dash"></div>
+                <p class="text-lg text-brand-dark leading-relaxed text-left font-light">
+                  Stvaramo projektantska i arhitektonska rješenja, vršimo usluge autorskog i tehničkog nadzora i organizacije radova na teritoriji Republike Srpske, Federacije Bosne i Hercegovine a i u Srbiji
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 justify-items-start">
+              <div class="image-placeholder" style="aspect-ratio: 3 / 2; min-height: 200px; max-height: 220px; width: 100%;">
+                <!-- 1530x1020 -->
+                <img src="hram1.jpeg" alt="" srcset="">
+              </div>
+              <div class="image-placeholder" style="aspect-ratio: 3 / 2; min-height: 200px; max-height: 220px; width: 100%;">
+                <!-- 1530x1020 -->
+                <img src="hram2.jpeg" alt="" srcset="">
+              </div>
+              <div class="image-placeholder" style="aspect-ratio: 3 / 2; min-height: 200px; max-height: 220px; width: 100%;">
+                <!-- 1530x1020 -->
+                 <img src="hram3.jpeg" alt="" srcset="">
+              </div>
+              <div class="image-placeholder" style="aspect-ratio: 3 / 2; min-height: 200px; max-height: 220px; width: 100%;">
+                <!-- 1530x1020 -->
+                <img src="hram4.jpeg" alt="" srcset="">
+
+              </div>
             </div>
           </div>
         </div>
@@ -187,13 +253,13 @@
             </h2>
             <div class="bullet-line">
               <div class="bullet-dash"></div>
-              <p class="text-base font-light text-brand-dark">
+              <p class="text-lg font-light text-brand-dark">
                 Izrađujemo kupole od konstrukcijskih čelika s antikorozivnom obradom, ili od drvenih konstrukcija različitih vrsta drveća.
               </p>
             </div>
             <div class="bullet-line">
               <div class="bullet-dash"></div>
-              <p class="text-base font-light text-brand-dark">
+              <p class="text-lg font-light text-brand-dark">
                 Varijacije obloge kupola: nehrđajući čelik s nanošenjem čistog zlata ili napiljkom titanskog nitrida, krovna bakra, uključujući naknadno prekrivanje listom zlata.
               </p>
             </div>
@@ -212,7 +278,7 @@
             <h2 class="text-xl font-bold text-brand-dark mb-4">
               Galvansko zlatarenje
             </h2>
-            <p class="text-base font-light text-brand-dark leading-relaxed">
+            <p class="text-lg font-light text-brand-dark leading-relaxed">
               Osnovnom prednošću metode galvanskog zlatarenja je mogućnost regulacije u širokim granicama zadane debljine premaza. To daje mogućnost smanjenja potrošnje skupih komponenti po jedinici pokrivene površine.
             </p>
           </div>
@@ -222,10 +288,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
             <h2 class="text-xl font-bold text-brand-dark mb-4">
-              Быстровозводимые здания и сооружения из металлоконструкций и сэндвич-панелей
+              Brzoizgradivi objekti napravljeni od metalnih konstrukcija i sendvič panela
             </h2>
-            <p class="text-base font-light text-brand-dark leading-relaxed">
-              Высокие теплоизоляционные свойств сэндвич-панелей обеспечивают высокую степень комфортности сооружений в любых климатических условиях в интервалах от -60° до +60°. Конструкция сэндвич-панелей не имеет «мостика холода», что исключает появление грибков или плесени и позволяет снизить затраты на эксплуатацию зданий из сэндвич-панелей, прежде всего на отопление в несколько раз.
+            <p class="text-lg font-light text-brand-dark leading-relaxed">
+              Visoke termoizolacijske osobine sendvič panela osiguravaju visok stepen udobnosti 
+              objekata u svim klimatskim uslovima u rasponu od -60°C do +60°C. 
+              Konstrukcija sendvič panela nema "most hladnoće", što isključuje pojavu gljivica
+              ili plijesni i omogućava smanjenje troškova održavanja zgrada od sendvič panela, 
+              prije svega na grijanje.
             </p>
           </div>
           <div class="image-placeholder" style="height:280px;">
@@ -240,22 +310,22 @@
           </div>
           <div>
             <h2 class="text-xl font-bold text-brand-dark mb-4">Restauracija</h2>
-            <p class="text-base font-light text-brand-dark mb-3">U listi naših radova:</p>
+            <p class="text-lg font-light text-brand-dark mb-3">U listi naših radova:</p>
             <div class="bullet-line">
               <div class="bullet-dash"></div>
-              <p class="text-base font-light text-brand-dark">
-                restauracija i galvansko zlatarenje osvetljavačke armature Državnog Akademskog "Boljšog Teatra" u Moskvi;
+              <p class="text-lg font-light text-brand-dark">
+                Restauracija i galvansko zlatarenje osvetljavačke armature Državnog Akademskog "Boljšog Teatra" u Moskvi;
             </div>
             <div class="bullet-line">
               <div class="bullet-dash"></div>
-              <p class="text-base font-light text-brand-dark">
-                rekonstrukcija kupola i krstova crkve "Surb Astvacacin" u Rostovskoj oblasti;
+              <p class="text-lg font-light text-brand-dark">
+                Rekonstrukcija kupola i krstova crkve "Surb Astvacacin" u Rostovskoj oblasti;
               </p>
             </div>
             <div class="bullet-line">
               <div class="bullet-dash"></div>
-              <p class="text-base font-light text-brand-dark">
-                реставрация внешнего металлического декоративного экстерьера «Звезда» и «Серп и молот» башни объекта культурного наследия Северного речного вокзала.
+              <p class="text-lg font-light text-brand-dark">
+                Restauracija vanjskog metalnog dekorativnog eksterijera "Zvijezda" i "Srpa i čekića" na tornju objekta kulturnog nasljeđa Sjeverne riječne luke.
               </p>
             </div>
           </div>
@@ -414,22 +484,22 @@
           <p class="text-base text-brand-dark">
             <span class="font-semibold">Adresa:</span>
             <span class="font-light">
-              (Ovdje ide adresa)
+              Banja Luka, Bosna i Hercegovina
             </span>
           </p>
           <p class="text-base font-light text-brand-dark">od 10:00 do 19:00</p>
           <div class="flex items-center justify-center gap-2 flex-wrap">
-            <a href="tel:+79109449301" class="text-base font-light text-brand-navy hover:underline">
+            <!-- <a href="tel:+79109449301" class="text-base font-light text-brand-navy hover:underline">
               +7(910)944-93-01
             </a>
-            <span class="text-brand-dark">|</span>
-            <a href="tel:+79056253532" class="text-base font-light text-brand-navy hover:underline">
-              +7(905)625-35-32
+            <span class="text-brand-dark">|</span> -->
+            <a href="tel:+38765740527" class="text-base font-light text-brand-navy hover:underline">
+              +(387) 65 740 527
             </a>
           </div>
           <p>
             <a href="mailto:33779@bk.ru" class="text-base font-light text-brand-navy hover:underline">
-              E-mail: vasmejl@gmail.com
+              E-mail: 33779@bk.ru
             </a>
           </p>
         </div>
@@ -463,6 +533,37 @@
             target.scrollIntoView({ behavior: 'smooth' });
           }
         });
+      });
+
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const mobileDrawerBackdrop = document.getElementById('mobileDrawerBackdrop');
+      const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+
+      const openDrawer = () => {
+        mobileDrawer.classList.add('open');
+        mobileDrawerBackdrop.classList.add('open');
+        mobileDrawer.setAttribute('aria-hidden', 'false');
+      };
+
+      const closeDrawer = () => {
+        mobileDrawer.classList.remove('open');
+        mobileDrawerBackdrop.classList.remove('open');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+      };
+
+      if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', openDrawer);
+      }
+      if (mobileDrawerClose) {
+        mobileDrawerClose.addEventListener('click', closeDrawer);
+      }
+      if (mobileDrawerBackdrop) {
+        mobileDrawerBackdrop.addEventListener('click', closeDrawer);
+      }
+
+      document.querySelectorAll('#mobileDrawer .nav-link').forEach(link => {
+        link.addEventListener('click', closeDrawer);
       });
     </script>
   </body>

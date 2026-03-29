@@ -7,13 +7,13 @@ html{
 }
 
 .image-placeholder {
-    background: #fff;
+    background: #ffffff08;
     
     position: relative;
     overflow: hidden;
 }
 
-#headerpic {
+.image-placeholder img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -65,6 +65,103 @@ html{
 
 .nav-link:hover {
     color: #177eb5;
+}
+
+.mobile-menu-button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 26px;
+    height: 3px;
+    background: #494949;
+    border-radius: 2px;
+    display: block;
+}
+
+.mobile-drawer-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 40;
+}
+
+.mobile-drawer-backdrop.open {
+    display: block;
+}
+
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80%;
+    padding: 24px;
+    background: #ffffff;
+    color: #2b2b2b;
+    z-index: 50;
+    transform: translateX(-110%);
+    transition: transform 0.25s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+}
+
+.mobile-drawer.open {
+    transform: translateX(0);
+}
+
+.mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.mobile-drawer-title {
+    color: #177eb5;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.mobile-drawer-close {
+    border: none;
+    background: transparent;
+    color: #494949;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mobile-drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mobile-drawer-nav .nav-link {
+    display: block;
+    color: #494949;
+    padding: 10px 0;
+}
+
+.mobile-drawer-nav .nav-link:hover {
+    color: #177eb5;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-button,
+    .mobile-drawer,
+    .mobile-drawer-backdrop {
+        display: none;
+    }
 }
 
 .step-box {
